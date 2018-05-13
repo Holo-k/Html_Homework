@@ -1,0 +1,36 @@
+@media screen and (max-width:1025px) {
+    .footer {
+        min-height: 30px;
+        line-height: 30px;
+    }
+    .about {
+        font-size: 12px;
+    }
+    .copyright {
+        width: 50%;
+        padding: 0.5em 0;
+    }
+    .social_linl {
+        width: 20%;
+    }
+    ul.social li {
+        margin-right: 1em;
+    }
+    ul.social li i {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+    ul.social li i.to_weibo {
+        background-size: 20px;
+    }
+    ul.social li i.to_wechat {
+        background-size: 20px;
+    }
+    .content_container form {
+        width: 95%;
+    }
+    .content_container label {
+        width: 90%;
+    }
+}

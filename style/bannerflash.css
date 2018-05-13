@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+
+.flash{
+	width:630px;
+	height:360px;
+	margin-top:3px;
+	position:relative;}
+.flash_list{
+	width:630px;
+	height:360px;
+	position:relative;
+	overflow:hidden;}
+.flash_list a{
+	position:absolute;
+	display:none;
+	top:1px;
+	left:1px;}
+.flash_list .block{
+	display:block;}
+
+.num{
+	position:absolute;
+	right:10px;
+	bottom:8px;}
+.num a{
+	width:19px;
+	height:19px;
+	float:left;
+	margin-right:1px;
+	background:url(../images/banner_tag_off.gif) left bottom no-repeat;
+	text-align:center;
+	line-height:19px;
+	text-decoration:none;
+	font-size:14px;}
+.num a:link,.num a:visited{
+	color:#999;}
+.num a.num_on{
+	background:url(../images/banner_tag_on.gif) left bottom no-repeat;
+	height:19px;
+	line-height:19px;
+	padding-top:0px;}
+.num a.num_on:link,.num a.num_on:visited{
+	color:#fff;
+	font-weight:bold;}
+	
+	
+	
+	
+	
+	
+	

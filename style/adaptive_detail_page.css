@@ -1,0 +1,50 @@
+@media screen and (max-width:1025px) {
+    .content_left {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    div.content_container>div.fl {
+        float: none;
+        margin: 0 auto;
+    }
+    .content_right {
+        float: none;
+        padding: 1em 2em;
+    }
+    .p-details-1, .p-details-slider, .content_left, .content_right {
+        width: 95%
+    }
+    .header_top {
+        display: none;
+    }
+    .footer {
+        min-height: 30px;
+        line-height: 30px;
+    }
+    .about {
+        font-size: 12px;
+    }
+    .copyright {
+        width: 50%;
+        padding: 0.5em 0;
+    }
+    .social_linl {
+        width: 20%;
+    }
+    ul.social li {
+        margin-right: 1em;
+    }
+    ul.social li i {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+    ul.social li i.to_weibo {
+        background-size: 20px;
+    }
+    ul.social li i.to_wechat {
+        background-size: 20px;
+    }
+}

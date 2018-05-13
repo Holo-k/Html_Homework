@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="./style/detail_page_2.css">
+    <link rel="stylesheet" href="./style/owl.css">
+    <link type="text/css" rel="stylesheet" href="./style/owl.carousel.css">
+    <link type="text/css" rel="stylesheet" href="./style/owl.theme.css">
+    <link href="./style/expander.css" rel="stylesheet">
+    <link href="./style/theme.css" rel="stylesheet">
+    <link href="./style/cta.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style/bottom_page.css">
+    <link rel="stylesheet" href="./style/adaptive_detail_page.css" media="all">
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/owl.carousel.min.js"></script>
+    <script src="js/expander.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(function () {
+            $('#scroll').owlCarousel({
+                items: 4,
+                autoPlay: true,
+                navigation: true,
+                navigationText: ["", ""],
+                scrollPerPage: true
+            });
+        });
+    </script>
+
+
+
+    <script>
+        var index = 0;
+        var timeout = setInterval(function () {
+            if (index > 10) {
+                window.clearInterval(timeout)
+            }
+            $("article").eq(index).addClass("show");
+            index++
+        }, 300);
+
+        function showFoo() {
+            $("#fooId").trigger("expand");
+        }
+
+        $("#expandSettings").on("click", function () {
+            if ($("ul.settings").hasClass("open")) {
+                $("ul.settings").removeClass("open");
+            } else {
+                $("ul.settings").addClass("open");
+
+            }
+        });
+    </script>
+
+    <script src="./js/cta.js"></script>
+    <script>
+        var closeFn;
+        function closeShowingModal() {
+            var showingModal = document.querySelector('.modal.show');
+            if (!showingModal) return;
+            showingModal.classList.remove('show');
+            document.body.classList.remove('disable-mouse');
+            document.body.classList.remove('disable-scroll');
+            if (closeFn) {
+                closeFn();
+                closeFn = null;
+            }
+        }
+        document.addEventListener('click', function (e) {
+            var target = e.target;
+            if (target.dataset.ctaTarget) {
+                closeFn = cta(target, document.querySelector(target.dataset.ctaTarget), { relativeToWindow: true }, function showModal(modal) {
+                    modal.classList.add('show');
+                    document.body.classList.add('disable-mouse');
+                    if (target.dataset.disableScroll) {
+                        document.body.classList.add('disable-scroll');
+                    }
+                });
+            }
+            else if (target.classList.contains('modal-close-btn')) {
+                closeShowingModal();
+            }
+        });
+        document.addEventListener('keyup', function (e) {
+            if (e.which === 27) {
+                closeShowingModal();
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header_top clearfix">
+            <div class="logo_1 fl clearfix"></div>
+            <div class="search fl clearfix">
+                <div class="tab_area  clearfix">
+                    <div class="tab">
+                        <a href="#">搜商品</a>
+                    </div>
+                    <div class="tab">
+                        <a href="#">搜商家</a>
+                    </div>
+                </div>
+                <div class="search_form">
+                    <input type="text" name="keywords" id="search_keywords" />
+                    <input type="submit" name="search_btn" id="search_btn" value="搜索" />
+                </div>
+                <div class="hot_words"> 热门搜索：
+                    <a href="#">Surface Phone</a>
+                    <a href="#">Surface Book</a>
+                    <a href="#" class="more">更多></a>
+                </div>
+            </div>
+            <div class="to_phone fr clearfix">手机购物</div>
+        </header>
+        <!-- <header class="header_nav clearfix">
+            <div class="logo_2 fl clearfix">
+                <a href="index.html">
+                    <h1>大田村</h1>
+                </a>
+            </div>
+            <div class="navigation fl clearfix">
+                <ul class="nav_ul">
+                    <li>
+                        <a href="index.html">主页</a>
+                    </li>
+                    <li>
+                        <a href="#">Surface</a>
+                    </li>
+                    <li>
+                        <a href="#">Xbox</a>
+                    </li>
+                    <li>
+                        <a href="#">Hololens</a>
+                    </li>
+                    <li>
+                        <a href="#">联系我们</a>
+                    </li>
+                </ul>
+            </div> -->
+        <!-- <div class="search-bar fl clearfix">
+                <input type="submit" value="" />
+                <div class="i-text clearfix">
+                    <input type="text" placeholder="输入您心怡的产品吧" required />
+                </div>
+            </div> -->
+        </header>
+
+        <div class="content_container clearfix">
+
+
+
+
+            <div class="content_left fl clearfix">
+                <ul class="current_path_ul">
+                    <li>
+                        <a href="index.html">首页</a>&nbsp; ></li>
+                    <li>
+                        <a href="#">Surface</a>&nbsp; ></li>
+                    <li class="a-active">Surfa Book 2&nbsp;</li>
+                </ul>
+                <div class="p-details-slider fl clearfix">
+                    <img src="./images/surface_phone_4.jpg" alt="">
+                </div>
+                <div class="p-details-1 fr clearfix">
+                    <h2>Surface Book 2</h2>
+                    <ul class="rate clearfix">
+                        <li>
+                            <a class="product-rate" href="#">
+                                <label> </label>
+                            </a>
+                            <span> </span>
+                        </li>
+                        <li>
+                            <a href="#">999好评&nbsp; &nbsp; 查看评论</a>
+                        </li>
+                    </ul>
+                    <span>
+                        <p>
+                            <strong>于细节处见创新</strong>
+                            <br> 全新 Surface Book 2 设计精致，材质上乘，轻薄身躯适合您随身携带，且性能强劲，毫不妥协。 专为触控笔2 和触摸操作设计的 PixelSense 显示屏，让您获得震撼的分辨率和色彩，现有
+                            13.5 英寸及全新 15 英寸屏幕可供选择。 端口丰富便于连接外设。新增 USB-C 端口可用作单个连接器，以便为设备充电、传输文件和在外部监视器上显示视频。</p>
+                    </span>
+                    <div class="p-details-2 clearfix">
+                        <ul class="price-avl clearfix">
+                            <li class="p-price">
+                                <span>￥12999.00</span>
+                                <label>￥10999.00</label>
+                            </li>
+                            <li class="p-status">
+                                <i>有货</i>
+                            </li>
+                        </ul>
+                        <ul class="p-order clearfix">
+                            <span>数量:</span>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                            </select>
+                        </ul>
+                        <input type="button" value="立即购买" />
+                        <ul class="p-share clearfix">
+                            <h3>分享</h3>
+                            <ul class="clearfix">
+                                <li>
+                                    <a class="p-2-share-phone" href="#">
+                                        <span> </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="p-2-share-weibo" href="#">
+                                        <span> </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="p-2-share-wechat" href="#">
+                                        <span> </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+                <section class="detail_img">
+                    <h3 class="item-introduce ">产品详情</h3>
+                    <article>
+                        <div class="imgContainer">
+                            <img src="./images/surface_book_2.jpg" data-expander='{animation:"default"}'>
+                        </div>
+
+                        <div class="imgContainer">
+                            <img src="./images/surface_book_2.jpg" data-expander='{animation:"diamond"}'>
+                        </div>
+
+
+
+                        <div class="imgContainer">
+                            <img src="./images/surface_book_2.jpg" data-expander='{animation:"turn3d"}'>
+                        </div>
+
+
+
+                        <div class="imgContainer">
+                            <img src="./images/surface_phone_2.jpg" data-expander='{animation:"default"}'>
+                        </div>
+                    </article>
+                </section>
+
+
+                <div class="comment_list">
+                    <h3 class="item-introduce">用户评价</h3>
+                    <div class="list-item clearfix">
+                        <div class="user_face">
+                            <a href="#">
+                                <img src="./images/user_icon.png" alt="">
+                            </a>
+                        </div>
+                        <div class="con">
+                            <div class="user">
+                                <a class="name " href="#" target="_blank">Poi</a>
+                                <a href="#" target="_blank">
+                                    <i class="level l4"></i>
+                                </a>
+                            </div>
+                            <p class="comment_content">666</p>
+                            <div class="info">
+                                <span class="floor">#500</span>
+                                <span class="plad">来自
+                                    <a href="//app.bilibili.com/" target="_blank">安卓客户端</a>
+                                </span>
+                                <span class="time">2小时前</span>
+                                <span class="like">
+                                    <i></i>
+                                    <span></span>
+                                </span>
+                                <span class="hate">
+                                    <i></i>
+                                </span>
+                                <span class="btn_reply">回复</span>
+                                <div class="operation">
+                                    <div class="spot"></div>
+                                    <div class="opera-list" style="display: none;">
+                                        <ul>
+                                            <li class="blacklist">加入黑名单</li>
+                                            <li class="report">举报</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="replay_box"></div>
+                        </div>
+                    </div>
+                    <div class="list-item clearfix">
+                        <div class="user_face">
+                            <a href="#">
+                                <img src="./images/user_icon.png" alt="">
+                            </a>
+                        </div>
+                        <div class="con">
+                            <div class="user">
+                                <a class="name " href="#" target="_blank">Poi</a>
+                                <a href="#" target="_blank">
+                                    <i class="level l4"></i>
+                                </a>
+                            </div>
+                            <p class="comment_content">机器拿到手里，简直就是惊艳，速度杠杠的，第一次见识笔记本还可以做到如此精致细腻完美的！使用情况再来评续！
+                                <img src="./images/71738.png" alt="" data-cta-target=".js-dialog" data-disable-scroll="true">
+                            </p>
+                            <div class="info">
+                                <span class="floor">#500</span>
+                                <span class="plad">来自
+                                    <a href="//app.bilibili.com/" target="_blank">安卓客户端</a>
+                                </span>
+                                <span class="time">2小时前</span>
+                                <span class="like ">
+                                    <i></i>
+                                    <span></span>
+                                </span>
+                                <span class="hate ">
+                                    <i></i>
+                                </span>
+                                <span class="btn_reply">回复</span>
+                                <div class="operation">
+                                    <div class="spot"></div>
+                                    <div class="opera-list" style="display: none;">
+                                        <ul>
+                                            <li class="blacklist">加入黑名单</li>
+                                            <li class="report">举报</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="replay_box"></div>
+                        </div>
+                    </div>
+                    <div class="bottom-page">
+                        <span class="disabled">上一页</span>
+                        <span class="current">1</span>
+                        <a class="tcd-number" href="javascript:;">2</a>
+                        <a class="tcd-number" href="javascript:;">3</a>
+                        <a class="tcd-number" href="javascript:;">4</a>
+                        <span class="dian">...</span>
+                        <a class="tcd-number" href="javascript:;">26</a>
+                        <a class="next" href="javascript:;">下一页</a>
+                        <div class="page-jump">共
+                            <span>26</span>页，跳至
+                            <input type="text">页</div>
+                    </div>
+                    <div class="comment-send">
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="scroll-outer clearfix">
+                    <h3 class="item-introduce">猜你喜欢</h3>
+                    <div id="scroll" class="owl-carousel clearfix">
+                        <div class="item">
+                            <img src="images/surface_pro_4.jpg" alt="">
+                            <div class="shd">
+                                <a href="#"></a>
+                            </div>
+                            <div class="txt">
+                                <h3>
+                                    <a href="#">Surface Pro 4</a>
+                                </h3>
+                                <p>
+                                    <strong>升级便携，高效随时随地</strong> 拥有全新 Surface Pro，随时随地进行创作、学习、办公或娱乐。轻薄典范，给你更高移动生产力，满足全天所需。采用更柔软的圆滑边缘和隐藏摄像机，便携性更上一层楼。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/Surface_laptop.jpg" alt="">
+                            <div class="shd">
+                                <a href="#"></a>
+                            </div>
+                            <div class="txt">
+                                <h3>
+                                    <a href="#">Surface Laptop</a>
+                                </h3>
+                                <p>
+                                    <strong>优雅设计 匠心打造</strong>
+                                    Surface Laptop 以优良质地、精致细节和简洁的线条为您带来全新感官和个人魅力。</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/surface_book_2.jpg" alt="">
+                            <div class="shd">
+                                <a href="#"></a>
+                            </div>
+                            <div class="txt">
+                                <h3>
+                                    <a href="#">Surface Book 2</a>
+                                </h3>
+                                <p>
+                                    <strong>四重模式 创意随心</strong>
+                                    全新 Surface Book 2 具有四种模式可切换，满足您不同的工作及创意需求。</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/surface_studio_3.jpg" alt="">
+                            <div class="shd">
+                                <a href="#"></a>
+                            </div>
+                            <div class="txt">
+                                <h3>
+                                    <a href="#">Surface Studio</a>
+                                </h3>
+                                <p>
+                                    <strong>你的创意工作室 </strong> 为创造者创造助力创想全过程，给高瞻远瞩的人更多畅想。</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/Xbox_1.jpg" alt="">
+                            <div class="shd">
+                                <a href="#"></a>
+                            </div>
+                            <div class="txt">
+                                <h3>
+                                    <a href="#">Xbox One X</a>
+                                </h3>
+                                <p>
+                                    <strong>家庭娱乐游戏机</strong>
+                                    Xbox One X 拥有出色的图形运算能力 • 每秒 6 万亿次图形处理能力，内置 4K 蓝光光驱提供更沉浸的游戏及娱乐体验 • 与广大玩家社区互动，一起在先进的多人联机网络上进行游戏 • 支持所有 Xbox One 游戏及配件3 • 超采样技术让游戏在
+                                    Full HD 屏幕上表现更好——游戏更顺畅，画面更精彩，载入更快速</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="content_right fr">
+                <div class="p_hot_promotion">
+                    <h3>火热进行中</h3>
+                    <img src="images/surface_phone_1.jpg" alt="">
+                    <div class="p_discount">
+                        <p>9.9折</p>
+                        <p>五一大促销</p>
+                        <a href="#">立即购买</a>
+                    </div>
+                </div>
+                <div class="p_categories">
+                    <h3>产品分类</h3>
+                    <ul class="p_c_list">
+                        <li>
+                            <a href="#">Surface</a>
+                        </li>
+                        <li>
+                            <a href="#">Xbox</a>
+                        </li>
+                        <li>
+                            <a href="#">Hololens</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p_tags">
+                    <h4 class="p_t_impression">买家印象</h4>
+                    <ul class="p_t_valuation">
+                        <li>
+                            <a href="#">特别快(238)</a>
+                        </li>
+                        <li>
+                            <a href="#">性价比高(201)</a>
+                        </li>
+                        <li>
+                            <a href="#">外观时尚(144)</a>
+                        </li>
+                        <li>
+                            <a href="#">漂亮大气(133)</a>
+                        </li>
+                        <li>
+                            <a href="#">速度飞快(123)</a>
+                        </li>
+                        <li>
+                            <a href="#">运行平稳(99)</a>
+                        </li>
+                        <li>
+                            <a href="#">开机速度快(94)</a>
+                        </li>
+                        <li>
+                            <a href="#">物流很快(84)</a>
+                        </li>
+                        <li>
+                            <a href="#">反应灵敏(47)</a>
+                        </li>
+                        <li>
+                            <a href="#">很轻薄(36)</a>
+                        </li>
+                        <li>
+                            <a href="#">做工精细(31)</a>
+                        </li>
+                        <li>
+                            <a href="#">挺不错(28)</a>
+                        </li>
+                    </ul>
+                    <a href="#" class="p_2_all_valuation">查看所有评价</a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <footer class="footer clearfix">
+            <div class="about fl clearfix">
+                <a href="index.html">
+                    <h1>微软信仰中心</h1>
+                </a>
+            </div>
+            <div class="copyright fl clearfix">
+                © Microsoft 2018
+            </div>
+            <div class="social_linl fl clearfix">
+                <ul class="social">
+                    <li>
+                        <i class="to_weibo"></i>
+                    </li>
+                    <li>
+                        <i class="to_wechat"></i>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
+
+        <div class="js-dialog  modal  dialog clearfix" style="text-align: center;">
+            <span class="modal-close-btn"></span>
+            <div class="dialog_comment_img  clearfix">
+                <img src="./images/surface_phone_2.jpg" alt="">
+            </div>
+            <div class="dialog_comment_content fr clearfix">
+                <p>机器拿到手里，简直就是惊艳，速度杠杠的，第一次见识笔记本还可以做到如此精致细腻完美的！使用情况再来评续！</p>
+            </div>
+            <!-- <a onclick="closeShowingModal(); return;" class="btn  btn--blue">Yes</a>
+            <a onclick="closeShowingModal(); return;" class="btn  btn--blue">No</a> -->
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

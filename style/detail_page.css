@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* background:#ea6f4d; */
+	/* padding:2em 0; */
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    background: cadetblue;
+    height: 900px;
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.header-top-link {
+    width: 100%;
+    background: teal;
+    height: 5%;
+    overflow: hidden;
+}
+
+.search {
+    width: 100%;
+    background: sandybrown;
+    height: 15%;
+    overflow: hidden;
+}
+
+.nav-sort {
+    width: 100%;
+    background: yellowgreen;
+    height: 5%;
+    overflow: hidden;
+}
+
+.crumb-wrap {
+    width: 100%;
+    background: tomato;
+    height: 5%;
+    overflow: hidden;
+}
+
+.p-box {
+    width: 100%;
+    background: tan;
+    height: 45%;
+    overflow: hidden;
+}

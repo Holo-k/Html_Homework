@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>注册</title>
+	<link rel="stylesheet" href="./style/register.css">
+	<link rel="stylesheet" href="./style/adaptive_register_page.css" media="all">
+	<script>
+		function PreviewImage(imgFile) {
+			var pattern = /(\.*.jpg$)|(\.*.png$)|(\.*.jpeg$)|(\.*.gif$)|(\.*.bmp$)/;
+			if (!pattern.test(imgFile.value)) {
+				alert("系统仅支持jpg/jpeg/png/gif/bmp格式的照片！");
+				imgFile.focus();
+			}
+			path = URL.createObjectURL(imgFile.files[0]);
+			document.getElementById("imgPreview").innerHTML = "<img src='" + path + "' style='width:200px; height:200px;' />";
+		}
+	</script>
+</head>
+
+<body>
+	<div class="container">
+
+		<header class="header_top clearfix">
+			<div class="logo_1 fl clearfix"></div>
+			<div class="belief fl clearfix">
+				<h2>没有信仰</h2>
+				<img src="./images/xiaoyu.jpg" alt="">
+				<h2>赶紧来注册
+				</h2>
+			</div>
+		</header>
+
+
+		<div class="content_container">
+			<h1>
+				注册用户
+			</h1>
+			<form method="post" enctype="multipart/form-data">
+				<label>
+					账户名称:
+					<input id="name" type="text" name="username" value="" required placeholder="请输入用户名" />
+				</label>
+				<label>
+					密&emsp;&emsp;码:
+					<input id="name" type="text" name="password" required placeholder="请输入密码" />
+				</label>
+				<label>
+					邮&emsp;&emsp;箱:
+					<input id="name" type="email" name="email" value="" required placeholder="请输入邮箱" />
+				</label>
+				<label>
+					联系号码:
+					<input type="number" name="number" value="" required placeholder="请输入手机号码" />
+				</label>
+				<label>
+					上传头像:
+					<input type="file" name="pic" onchange='PreviewImage(this)' />
+					<div id="imgPreview"></div>
+				</label>
+
+				<input type="submit" class="button" value="注册" />
+				<input type="button" class="button" value="取消" onclick="goto();" />
+
+
+			</form>
+		</div>
+		<footer class="footer clearfix">
+			<div class="about fl clearfix">
+				<a href="index.html">
+					<h1>微软信仰中心</h1>
+				</a>
+			</div>
+			<div class="copyright fl clearfix">
+				© Microsoft 2018
+			</div>
+			<div class="social_linl fl clearfix">
+				<ul class="social">
+					<li>
+						<i class="to_weibo"></i>
+					</li>
+					<li>
+						<i class="to_wechat"></i>
+					</li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>
